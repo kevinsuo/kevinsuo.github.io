@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0030)http://tonyks.github.io/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+     
+    <meta name="description" content="The web page of Kevin Suo">
+    <meta name="keywords" content="Kevin Suo">
+
+    <title>Kevin Suo - Home Page</title>
+
+<style type="text/css">
+p.margin {margin: 0cm 0.6cm 0cm 0.6cm}
+</style>
+
+</head>
+
+
+
+<body style="background-color:#ffffff;">
+  <a name="TOP">
+    </a><img height="220" hspace="15" src="./ksuo_homepage_files//tsuo2.jpg" align="left" border="1">
+  
+
+  <h2><font color="#872546">Kevin K. Suo</font></h2>
+  <font color="#000000">
+  <h7>/* Ph.D. Student</h7><br>
+  <h7>   Department of Computer Science and Engineering </h7><br>
+  <h7>   University of Texas at Arlington */</h7><br>
+  </font>
+
+  <h3><font color="#872546">Contact</font></h3>
+  <font color="#000000">
+  <h7>/*  701 S Nedderman Dr, </h7><br>
+  <h7>   Arlington, TX 76019, </h7><br>
+  <h7>   Email: <a href="mailto:kun.suo@mavs.uta.edu" style="color:#00ABA4">kun.suo(at)mavs.uta.edu</a> */</h7>
+  </font>
+
+
+  <hr>
+      <a href="http://tonyks.github.io/index.html" style="color:#00ABA4">Myself</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 
+      <a href="http://tonyks.github.io/publication.html" style="color:#00ABA4">Publications</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 
+      <a href="http://tonyks.github.io/teaching.html" style="color:#00ABA4">Teaching</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 
+      <a href="http://tonyks.github.io/opensource.html" style="color:#00ABA4">Open-Source Activities</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 
+      <a href="http://tonyks.github.io/professional.html" style="color:#00ABA4">Professional Experiences</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 
+      <a href="http://tonyks.github.io/travel.html" style="color:#00ABA4">Travel</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 
+      <a href="http://tonyks.github.io/resources.html" style="color:#00ABA4">Resources</a> &nbsp;&nbsp;&nbsp;<br>
+  <hr>
+
+
+
+
+
+
+
+
+
+  <!-- Open-Source Activities -->
+
+  <h4>
+      <a name="Open-Source Activities" id="Open-Source Activities"></a>
+
+      <font color="#872546">$ ls opensource_activities</font>
+  </h4>
+
+<font color="#000000"> 
+  <ul style="list-style-type:disc">
+      <li>Bug report (Application, Cloudsuite): <a href="https://github.com/parsa-epfl/cloudsuite/issues/124" style="color:#00ABA4">Running web-search client container problem</a> 
+          <ul style="list-style-type:circle">
+            <li><font color="#00000">/* Description: Client container under web-search benchmark fails to start with error message. Curl is missing in the official Dockerfile. */</font></li> 
+            <li>The corresponding fix to the bug has been merged into offical branch.  (<a href="https://github.com/parsa-epfl/cloudsuite/pull/125" style="color:#00ABA4">Merged List</a>).</li>
+          </ul>
+      </li>
+
+
+      <li>Bug report (Hypervisor, Xen): <a href="https://lists.xenproject.org/archives/html/xen-devel/2017-06/msg01405.html" style="color:#00ABA4">Long tail latency caused by rate-limit in Xen credit2</a> 
+          <ul style="list-style-type:circle">
+            <li><font color="#000000">/* Description: When one I/O-bound VM shares the physical CPU with one CPU-bound VM and the hypervisor is using credit2 scheduler, the average and tail latency of the I/O-bound VM will increase significantly. The reason is caused by the default ratelimit in the Xen scheduler. Similar issue is also available in Xen credit1 scheduler. */</font></li> 
+            <li>This bug exists in Xen 4.8, comfirmed by Dario Faggioli(<a href="https://lists.xenproject.org/archives/html/xen-devel/2017-06/msg01410.html" style="color:#00ABA4">Xen Develop Mailing List</a>).</li>
+          </ul>
+      </li>
+
+
+      <li>Error and solution (Application, Java JDK): <a href="http://mail.openjdk.java.net/pipermail/compiler-dev/2016-November/010546.html" style="color:#00ABA4">Compiler version test failed of SPECJVM2008 benchmarks on OpenJDK</a> 
+        <ul style="list-style-type:circle">
+            <li><font color="#000000">/* Description: Compiler version detection is failed when executing SPECJVM2008 benchmarks on customized OpenJDK. */</font></li> 
+            <li>This issue exists when executing SPECJVM2008 on OpenJDK 1.7, 1.8.</li>
+          </ul>
+      </li>
+
+
+
+
+      <li>Bug report (Application, Java JDK): <a href="http://mail.openjdk.java.net/pipermail/hotspot-gc-dev/2016-November/019273.html" style="color:#00ABA4">Load imbalance of Tasks among GCTaskThreads during the Young GC</a> 
+        <ul style="list-style-type:circle">
+            <li><font color="#000000">/* Description: GCTasks from GCTaskQueue are not distributed evenly among the GCTaskThreads, which causes the load imbalance among GCTaskThreads and thus prolongs the Young GC time. */</font></li> 
+            <li>This bug exists in OpenJDK 1.8.</li>
+          </ul>
+      </li>
+
+
+
+
+
+      <li>Bug report (Hypervisor, Xen): <a href="http://lists.xenproject.org/archives/html/xen-devel/2016-05/msg01362.html" style="color:#00ABA4">Bugs existing Xen's credit scheduler cause long tail latency issues</a> 
+        <ul style="list-style-type:circle">
+            <li><font color="#000000">/* Description: If a VCPU is in UNDER state and wakes up from sleep, it will be boosted in csched_vcpu_wake(). However, the boosting is successful only when __runq_tickle() preempts the current VCPU. It is possible that csched_acct() can run between csched_vcpu_wake() and __runq_tickle(), which will sometimes change the BOOST state back to UNDER if credit is greater than 0. That contributes to the long tail latency. */</font></li> 
+            <li>This bug exists in Xen 4.3, 4.4, 4.5, comfirmed by George Dunlap(<a href="http://lists.xenproject.org/archives/html/xen-devel/2016-05/msg01559.html" style="color:#00ABA4">Xen Develop Mailing List</a>).</li>
+          </ul>
+      </li>
+
+
+
+
+      <li>Bug report (Hypervisor, Xen): <a href="http://lists.xenproject.org/archives/html/xen-devel/2016-05/msg01362.html" style="color:#00ABA4">Bugs existing Xen's credit scheduler cause long tail latency issues</a> 
+          <ul style="list-style-type:circle">
+            <li><font color="#000000">/* Description: In csched_acct() (by default every 30ms), a VCPU stops earning credits and is removed from the active CPU list(in __csched_vcpu_acct_stop_locked) if its credit is larger than the upper bound. However, csched_tick() will only put the current VCPU back to the active list instead of all inactive VCPUs. As such, the I/O-bound VM will be unable to be boosted and have very long latency. It takes at least one time slice (e.g., 30ms) before the I/O VM is activated and starts to receive credits. */</font></li> 
+            <li>This bug exists in Xen 4.3, 4.4, 4.5, comfirmed by George Dunlap(<a href="http://lists.xenproject.org/archives/html/xen-devel/2016-05/msg01559.html" style="color:#00ABA4">Xen Develop Mailing List</a>).</li>
+          </ul>
+      </li>
+
+
+
+
+      <li>Bug report (OS, Linux): <a href="http://lists.xenproject.org/archives/html/xen-devel/2016-05/msg01361.html" style="color:#00ABA4">Linux process vruntime accounting mistakenly in virtualized environment</a>
+          <ul style="list-style-type:circle">
+            <li><font color="#000000">/* Description: Linux CFS relies on delta_exec to charge the vruntime of processes. The variable delta_exec is the difference of a process starts and stops running on a CPU. This works well in physical machine. However, in virtual machine under capped resources, some processes might be accounted with inaccurate vruntime. */</font></li> 
+
+            <li>This bug exists in Linux 3.18.x to 4.7.x, confirmed by Boris Ostrovsky(<a href="http://lists.xenproject.org/archives/html/xen-devel/2016-05/msg01521.html" style="color:#00ABA4">Xen Develop Mailing List</a>), added patch by Juergen Gross(<a href="http://lists.xenproject.org/archives/html/xen-devel/2016-05/msg01711.html" style="color:#00ABA4">Xen Develop Mailing List</a>, <a href="https://lkml.org/lkml/2016/5/18/208" style="color:#00ABA4">Linux Kernel Mailing List</a>, <a href="https://patchwork.kernel.org/patch/9118261/" style="color:#00ABA4">Patchwork List</a>), fixed in Linux 4.8.x by adding xen_steal_clock in <a href="https://github.com/torvalds/linux/blob/master/drivers/xen/time.c" style="color:#00ABA4">drivers/xen/time.c</a>.</li>
+          </ul>
+      </li>
+
+
+
+      <li>Bug report (Application, libmemcached): <a href="https://bugs.launchpad.net/libmemcached/+bug/1562677" style="color:#00ABA4">libmemcached configure bug with memaslap enabled</a>
+          <ul style="list-style-type:circle">
+            <li><font color="#000000">/* Description: memaslap cannot be found when libmemcached is compiled with option --enable-memaslap. The configure file does not hint when corresponding library that memaslap need is missing. */</font></li>
+            <li>This bug exists in libmemcached-1.0.18.</li>
+          </ul>
+      </li>
+
+    <li>Bug report (Hypervisor, Xen): <a href="http://lists.xenproject.org/archives/html/xen-devel/2015-10/msg02853.html" style="color:#00ABA4">mistakenly wake in Xen's credit scheduler</a>
+    <ul style="list-style-type:circle">
+      <li><font color="#000000">/* Description: VCPU that runs CPU-intensive workload could be woken mistakenly due to the unawareness of CPU affinity which could make significant I/O performance loss. */</font></li>
+        <li>This bug exists in Xen 4.3, 4.4, 4.5, 4.6, confirmed by Dario Faggioli from Citrix(<a href="http://lists.xenproject.org/archives/html/xen-devel/2015-10/msg03054.html" style="color:#00ABA4">Xen Develop Mailing List</a>).</li>
+    </ul>
+  </li>
+  </ul> 
+</font>
+  <a href="http://tonyks.github.io/#TOP" style="color:#872546">[TOP]</a><br>
+  <hr>
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?d=KgQLpWA9g2GmOJEsoLBSANeh23hbOeD7a5UlS3RBfVA"></script>
+
+
+<div class="jvectormap-tip"></div>
+
+
+</body></html>
