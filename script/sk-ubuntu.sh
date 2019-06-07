@@ -18,6 +18,14 @@ chmod +x nmon
 cp nmon /usr/local/bin/
 
 
+# install Monitorix
+echo "deb http://apt.izzysoft.de/ubuntu generic universe" | sudo tee -a /etc/apt/sources.list
+wget http://apt.izzysoft.de/izzysoft.asc
+apt-key add izzysoft.asc
+apt-get update
+apt-get -y install monitorix
+
+
 # install redis
 cd ~
 wget http://download.redis.io/releases/redis-3.0.7.tar.gz
