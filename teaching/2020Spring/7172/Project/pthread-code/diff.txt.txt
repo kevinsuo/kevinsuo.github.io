@@ -1,0 +1,97 @@
+--- sequential.c	2019-09-26 15:36:50.000000000 -0400
++++ parallel.c	2019-10-06 18:26:50.000000000 -0400
+@@ -1,13 +1,16 @@
++#include <pthread.h>
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <string.h>
+ 
+ #define MAX 1024
++#define NUM_THREADS  5
+ 
+-int total = 0;
+ int n1,n2;
+ char *s1,*s2;
+ FILE *fp;
++int countArray[NUM_THREADS]={0};
++
+ 
+ int readf(FILE *fp)
+ {
+@@ -36,14 +39,21 @@
+ 	return 0;
+ }
+ 
+-int num_substring(void)
++void num_substring(int t)
+ {
+ 	int i,j,k;
+ 	int count;
++    int lenSearch;
++
++    if(t < NUM_THREADS - 1){
++        lenSearch = n1/NUM_THREADS;
++    }else{
++        lenSearch = n1/NUM_THREADS - n2;
++    }
+ 
+-	for (i = 0; i <= (n1-n2); i++){   
++	for(i=0; i<=lenSearch; i++){
+ 		count=0;
+-		for(j = i,k = 0; k < n2; j++,k++){  /*search for the next string of size of n2*/  
++		for(j = i + t*(n1/NUM_THREADS), k = 0; k < n2; j++, k++){
+ 			if (*(s1+j)!=*(s2+k)){
+ 				break;
+ 			}else{
+@@ -51,20 +61,42 @@
+ 			}
+ 
+ 			if(count==n2){  
+-				total++;		/*find a substring in this step*/   
++				countArray[t]++;
+ 			}                       
+ 		}
+ 	}
+-	return total;
++}
++
++void *calSubStringThread(void *threadid){
++    long tid;
++    tid = (long)threadid;
++    printf("This is thread %ld\n", tid);
++    num_substring(tid);
++    pthread_exit(NULL);
+ }
+ 
+ int main(int argc, char *argv[])
+ {
+-	int count;
+- 
++    pthread_t threads[NUM_THREADS];
++    int t, rc;
++    int totalNum = 0;
++
+ 	readf(fp);
+-	count = num_substring();
+- 	printf("The number of substrings is: %d\n", count);
++
++	for(t=0; t<NUM_THREADS; t++){
++        rc = pthread_create(&threads[t], NULL, calSubStringThread, (void *) (size_t)t);
++        if (rc){
++            printf("ERROR; return code from pthread_create() is %d\n", rc);
++            exit(-1);
++        }
++    }
++
++    for(t=0; t<NUM_THREADS; t++){
++        pthread_join(threads[t], NULL);
++    }
++
++    for(t=0; t<NUM_THREADS; t++){
++        totalNum = totalNum + countArray[t];
++    }
++
++ 	printf("The number of substrings is: %d\n", totalNum);
+ 	return 1;
+ }
+ 
