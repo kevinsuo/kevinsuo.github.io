@@ -4,18 +4,15 @@
 
 # Satisfy deps
 apt-get update -y && \
-apt install wget htop dh-autoreconf  iputils-ping fish gcc openssh-client openssh-server  net-tools g++ make vim git autoconf automake libtool libncurses5-dev libncursesw5-dev  -y &&\
+apt install wget make htop dh-autoreconf  iputils-ping fish gcc openssh-client openssh-server  net-tools g++ make vim git autoconf automake libtool libncurses5-dev libncursesw5-dev  -y &&\
 apt install python-pip python-dev libffi-dev libssl-dev libxml2-dev libxslt1-dev libjpeg8-dev zlib1g-dev -y
 apt install iperf iperf3 psmisc -y
 apt install netperf -y
+apt-get install autoconf
 
 # Download nmon
 cd ~
-wget http://omega.uta.edu/~kxs2503/script/nmon/nmon16g_x86.tar.gz
-tar zxvf nmon16g_x86.tar.gz
-mv nmon16g_x86_ubuntu1604 nmon
-chmod +x nmon
-cp nmon /usr/local/bin/
+apt install nmon -y
 
 
 # install Monitorix
