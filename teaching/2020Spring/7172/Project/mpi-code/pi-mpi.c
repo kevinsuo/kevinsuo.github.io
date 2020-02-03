@@ -21,7 +21,7 @@ int main() {
 
         clock_gettime(CLOCK_MONOTONIC, &start);
 
-        //boardcast MPI_Bcast to all threads
+        //boardcast value n to all threads
         MPI_Bcast(&n, 1, MPI_INT, 0, MPI_COMM_WORLD);
         sum = 0.0;
         double step = 1.0/(double) NUMSTEPS;
