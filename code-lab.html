@@ -4,6 +4,25 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <title>Cloud Data and Edge Systems Lab</title>
   </head>
+
+<style>
+  table {
+    border-collapse: collapse;
+  }
+  th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+  }
+  tr:nth-child(even) {
+    background-color: #fff;
+  }
+  tr:nth-child(odd) {
+    background-color: #fff;
+  }            
+</style>
+
+
   <body style="background-color: white;" link="#9805ff">
     <meta content="MSHTML 6.00.2900.2668" name="GENERATOR">
     <img src="./ksuo_homepage_files/logo.png" border="1" align="left" hspace="15"
@@ -31,31 +50,28 @@
     
 
     <h3><font color="#872546">$ ls people </font></h3>
-    <li>Faculty: 
-        <ul style="list-style-type:circle">
-            <li><a href="https://kevinsuo.github.io/index.html" style="color:#00ABA4">Dr. Kun Suo</a></li>
-        </ul>
-    </li>
-
-    <li>Graduate students: 
-        <ul style="list-style-type:circle">
+<table style="width:100%">
+  <tr align="left">
+    <th>Faculty</th>
+    <th>Graduate students</th> 
+    <th>Undergraduate students</th>
+    <th>Alumni</th>
+  </tr>
+  <tr>
+    <td style="width:20%"><a href="https://kevinsuo.github.io/index.html" style="color:#00ABA4">Dr. Kun Suo</a></td>
+    <td style="width:30%">
             <li>Ernst Fanfan (Spring 2020-)</li>
             <li>Saisangararamaleengam Alagapan (Spring 2020-)</li>
-        </ul>
-    </li>
-
-    <li>Undergraduate students: 
-        <ul style="list-style-type:circle">
+    </td>
+    <td style="width:30%">
             <li>Justin Duchatellier (Spring 2020-)</li>
             <li>Haley Granger (Spring 2020-)</li>
-        </ul>
-    </li>
-
-    <li>Alumni: 
-        <ul style="list-style-type:circle">
+    </td>
+    <td style="width:20%">
             <li>TBA</li>
-        </ul>
-    </li>  
+    </td>
+  </tr>
+</table>
     <hr>
 
 
@@ -72,20 +88,38 @@
 
 
     <h3><font color="#872546">$ ls projects and grants </font></h3>
-    1, Optimizing operating system kernel for high performance container network<p>
-    While the debate on user-space networking and in-kernel networking continues, user-space network
-stacks will eventually encounter similar issues facing the OS kernel today, when needing to make a tradeoff
-of throughput and latency, support resource sharing and guarantee performance isolation. Therefore, it is
-imperative to develop a fundamental understanding of the inefficiencies of commodity OSes in handling
-packets from high-speed devices and in virtualized networks. This project aims to greatly improve the
-throughput and latency, especially the tail latency, of the conventional network stack in commodity OSes.
-Unlike the existing research on optimizing the kernel network stack, this proposed research aims at a holistic study of the OS kernel in packet processing, including interrupt handling, the protocol stack, the thread
-scheduler, and their complex interplay. It will systematically study three types of bottlenecks: serialization,
-long critical path and idleness, and identify the causes of throughput loss, degraded average latency and
-spikes in tail latency.<p>
 
-    2, Mitigating startup latency via reusing container runtimes<p>
-    During the past few years, serverless computing has changed the paradigm of application development and deployment in the cloud due to its unique advantages, including easy administration, automatic scaling, built-in fault tolerance, etc. Nevertheless, serverless computing is also facing challenges such as long latency due to the container cold start. In this project, we propose HotC, a container-based runtime management framework which leverages the lightweight containers to mitigate the cold start and improve network performance of serverless applications. HotC maintains a live container runtime pool, analyzes the user input or configuration file, and provides available runtime for immediate reuse. Our evaluation results show that HotC introduces negligible overhead and can efficiently improve the performance of various applications in both cloud servers and edge devices.<p>
+
+<table style="width:100%">
+  <tr align="left">
+    <th>Project Name</th>
+    <th>Introduction</th> 
+    <th>Case Study/Demo</th>
+  </tr>
+  <tr>
+    <td style="width:20%">
+      Optimizing operating system kernel for high performance container network
+    </td>
+    <td style="width:40%">
+            While the debate on user-space networking and in-kernel networking continues, user-space network stacks will eventually encounter similar issues facing the OS kernel today, when needing to make a tradeoff of throughput and latency, support resource sharing and guarantee performance isolation. Therefore, it is imperative to develop a fundamental understanding of the inefficiencies of commodity OSes in handling packets from high-speed devices and in virtualized networks. This project aims to greatly improve the throughput and latency, especially the tail latency, of the conventional network stack in commodity OSes. Unlike the existing research on optimizing the kernel network stack, this proposed research aims at a holistic study of the OS kernel in packet processing, including interrupt handling, the protocol stack, the thread scheduler, and their complex interplay. It will systematically study three types of bottlenecks: serialization, long critical path and idleness, and identify the causes of throughput loss, degraded average latency and spikes in tail latency.
+    </td>
+    <td style="width:40%">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/d91MSmm6oqY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </td>
+  </tr>
+
+  <tr>
+    <td style="width:20%">
+      Mitigating startup latency via reusing container runtimes
+    </td>
+    <td style="width:40%">
+            During the past few years, serverless computing has changed the paradigm of application development and deployment in the cloud due to its unique advantages, including easy administration, automatic scaling, built-in fault tolerance, etc. Nevertheless, serverless computing is also facing challenges such as long latency due to the container cold start. In this project, we propose HotC, a container-based runtime management framework which leverages the lightweight containers to mitigate the cold start and improve network performance of serverless applications. HotC maintains a live container runtime pool, analyzes the user input or configuration file, and provides available runtime for immediate reuse. Our evaluation results show that HotC introduces negligible overhead and can efficiently improve the performance of various applications in both cloud servers and edge devices.
+    </td>
+    <td style="width:40%">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/QbqObA8jSgw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </td>
+  </tr>
+</table>
       
 
     <a href="./code-lab-files/spring2020.pdf" style="color:#00ABA4">CCSE Spring 2020</a><p>
