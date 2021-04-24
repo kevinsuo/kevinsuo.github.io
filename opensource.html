@@ -80,10 +80,7 @@ p.margin {margin: 0cm 0.6cm 0cm 0.6cm}
       <li>Bug report (Hypervisor, Xen): <a href="https://lists.xenproject.org/archives/html/xen-devel/2017-06/msg01405.html" style="color:#00ABA4">Long tail latency caused by rate-limit in Xen credit2</a> 
           <ul style="list-style-type:circle">
             <li><font color="#000000">/* Description: When one I/O-bound VM shares the physical CPU with one CPU-bound VM and the hypervisor is using credit2 scheduler, the average and tail latency of the I/O-bound VM will increase significantly. The reason is caused by the default ratelimit in the Xen scheduler. Similar issue is also available in Xen credit1 scheduler. */</font></li> 
-            <li>This bug exists in Xen 4.8.
-<!--
-              , comfirmed by Dario Faggioli(<a href="https://lists.xenproject.org/archives/html/xen-devel/2017-06/msg01410.html" style="color:#00ABA4">Xen Develop Mailing List</a>).
--->
+            <li>This bug exists in Xen 4.8, comfirmed by Dario Faggioli(<a href="https://lists.xenproject.org/archives/html/xen-devel/2017-06/msg01410.html" style="color:#00ABA4">Xen Develop Mailing List</a>).
               </li>
           </ul>
       </li>
@@ -113,9 +110,7 @@ p.margin {margin: 0cm 0.6cm 0cm 0.6cm}
       <li>Bug report (Hypervisor, Xen): <a href="http://lists.xenproject.org/archives/html/xen-devel/2016-05/msg01362.html" style="color:#00ABA4">Bugs existing Xen's credit scheduler cause long tail latency issues</a> 
         <ul style="list-style-type:circle">
             <li><font color="#000000">/* Description: If a VCPU is in UNDER state and wakes up from sleep, it will be boosted in csched_vcpu_wake(). However, the boosting is successful only when __runq_tickle() preempts the current VCPU. It is possible that csched_acct() can run between csched_vcpu_wake() and __runq_tickle(), which will sometimes change the BOOST state back to UNDER if credit is greater than 0. That contributes to the long tail latency. */</font></li> 
-            <li>This bug exists in Xen 4.3, 4.4, 4.5.
-<!--              , comfirmed by George Dunlap(<a href="http://lists.xenproject.org/archives/html/xen-devel/2016-05/msg01559.html" style="color:#00ABA4">Xen Develop Mailing List</a>).
--->
+            <li>This bug exists in Xen 4.3, 4.4, 4.5, comfirmed by George Dunlap(<a href="http://lists.xenproject.org/archives/html/xen-devel/2016-05/msg01559.html" style="color:#00ABA4">Xen Develop Mailing List</a>).
             </li>
           </ul>
       </li>
@@ -126,10 +121,7 @@ p.margin {margin: 0cm 0.6cm 0cm 0.6cm}
       <li>Bug report (Hypervisor, Xen): <a href="http://lists.xenproject.org/archives/html/xen-devel/2016-05/msg01362.html" style="color:#00ABA4">Bugs existing Xen's credit scheduler cause long tail latency issues</a> 
           <ul style="list-style-type:circle">
             <li><font color="#000000">/* Description: In csched_acct() (by default every 30ms), a VCPU stops earning credits and is removed from the active CPU list(in __csched_vcpu_acct_stop_locked) if its credit is larger than the upper bound. However, csched_tick() will only put the current VCPU back to the active list instead of all inactive VCPUs. As such, the I/O-bound VM will be unable to be boosted and have very long latency. It takes at least one time slice (e.g., 30ms) before the I/O VM is activated and starts to receive credits. */</font></li> 
-            <li>This bug exists in Xen 4.3, 4.4, 4.5.
-<!--
-              , comfirmed by George Dunlap(<a href="http://lists.xenproject.org/archives/html/xen-devel/2016-05/msg01559.html" style="color:#00ABA4">Xen Develop Mailing List</a>).
--->
+            <li>This bug exists in Xen 4.3, 4.4, 4.5, comfirmed by George Dunlap(<a href="http://lists.xenproject.org/archives/html/xen-devel/2016-05/msg01559.html" style="color:#00ABA4">Xen Develop Mailing List</a>).
               </li>
           </ul>
       </li>
@@ -157,9 +149,7 @@ p.margin {margin: 0cm 0.6cm 0cm 0.6cm}
     <li>Bug report (Hypervisor, Xen): <a href="http://lists.xenproject.org/archives/html/xen-devel/2015-10/msg02853.html" style="color:#00ABA4">mistakenly wake in Xen's credit scheduler</a>
     <ul style="list-style-type:circle">
       <li><font color="#000000">/* Description: VCPU that runs CPU-intensive workload could be woken mistakenly due to the unawareness of CPU affinity which could make significant I/O performance loss. */</font></li>
-        <li>This bug exists in Xen 4.3, 4.4, 4.5, 4.6.
-<!--          , confirmed by Dario Faggioli from Citrix(<a href="http://lists.xenproject.org/archives/html/xen-devel/2015-10/msg03054.html" style="color:#00ABA4">Xen Develop Mailing List</a>).
--->
+        <li>This bug exists in Xen 4.3, 4.4, 4.5, 4.6, confirmed by Dario Faggioli from Citrix(<a href="http://lists.xenproject.org/archives/html/xen-devel/2015-10/msg03054.html" style="color:#00ABA4">Xen Develop Mailing List</a>).
 </li>
     </ul>
   </li>
