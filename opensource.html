@@ -69,10 +69,20 @@ p.margin {margin: 0cm 0.6cm 0cm 0.6cm}
 
 <font color="#000000"> 
   <ul style="list-style-type:disc">
+
+      <li>Bug report (Application, Java JDK): <a href="https://bugs.openjdk.java.net/browse/JDK-8205921" style="color:#00ABA4">Optimizing best-of-2 work stealing queue selection on OpenJDK</a> 
+        <ul style="list-style-type:circle">
+            <li><font color="#000000">/* Description: The idea is to keep last successfully stolen queue as one of best of two candidates on the OpenJDK to reduce the number of steals and total failed steal attempts. */</font></li> 
+            <li>This bug exists in OpenJDK 1.8 and later, comfirmed by Zhengyu Gu and Thomas Schatzl from Redhat (<a href="https://bugs.openjdk.java.net/browse/JDK-8205921" style="color:#00ABA4">Merged List</a>).</li>
+          </ul>
+      </li>
+
+
+
       <li>Bug report (Application, Cloudsuite): <a href="https://github.com/parsa-epfl/cloudsuite/issues/124" style="color:#00ABA4">Running web-search client container problem</a> 
           <ul style="list-style-type:circle">
             <li><font color="#00000">/* Description: Client container under web-search benchmark fails to start with error message. Curl is missing in the official Dockerfile. */</font></li> 
-            <li>The corresponding fix to the bug has been merged into offical branch.  (<a href="https://github.com/parsa-epfl/cloudsuite/pull/125" style="color:#00ABA4">Merged List</a>).</li>
+            <li>The corresponding fix to the bug has been merged into offical branch (<a href="https://github.com/parsa-epfl/cloudsuite/pull/125" style="color:#00ABA4">Merged List</a>).</li>
           </ul>
       </li>
 
