@@ -1,0 +1,36 @@
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode a {
+    color: #bb86fc;
+}
+
+body.dark-mode h2,
+body.dark-mode h4 {
+    color: #bb86fc;
+}
+
+body.dark-mode font[color="#000000"] {
+    color: #ffffff;
+}
+
+body.dark-mode a[style*="#00ABA4"] {
+    color: #03dac6;
+}
+
+body.dark-mode font[color="#872546"] {
+    color: #cf6679;
+}
+
+body.dark-mode a[style*="#872546"] {
+    color: #cf6679;
+}
+
+body.dark-mode table th,
+body.dark-mode table td {
+    color: #ffffff;
+    background-color: #1e1e1e;
+    border-color: #555;
+}

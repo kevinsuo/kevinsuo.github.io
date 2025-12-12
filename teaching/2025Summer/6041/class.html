@@ -12,7 +12,9 @@
 p.margin {margin: 0cm 0.6cm 0cm 0.6cm}
 </style>
 
-<script type="text/javascript" src="./Kevin Suo - Home Page_files/jquery-1.12.4.min.js"></script></head>
+<script type="text/javascript" src="./Kevin Suo - Home Page_files/jquery-1.12.4.min.js"></script>  <link rel="stylesheet" href="../../../toggle.css">
+  <link rel="stylesheet" href="../../../dark-mode.css">
+</head>
 
 
 
@@ -20,7 +22,14 @@ p.margin {margin: 0cm 0.6cm 0cm 0.6cm}
 
 
 
-<body style="background-color:#ffffff;" data-gr-c-s-loaded="true">
+<body class=""  data-gr-c-s-loaded="true">
+  <div class="toggle-container">
+      <label class="toggle-switch">
+          <input type="checkbox" id="darkModeToggle">
+          <span class="slider"></span>
+      </label>
+  </div>
+
   <a name="TOP">
     </a>
   
@@ -185,4 +194,57 @@ p.margin {margin: 0cm 0.6cm 0cm 0.6cm}
 
 
 
+
+<script>
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+    function setTheme(theme) {
+        if (theme === 'dark') {
+            body.classList.add('dark-mode');
+        } else {
+            body.classList.remove('dark-mode');
+        }
+        darkModeToggle.checked = theme === 'dark';
+        try {
+            localStorage.setItem('darkMode', theme);
+        } catch (e) {
+            console.error('Failed to set dark mode in localStorage', e);
+        }
+    }
+
+    let savedTheme = null;
+    try {
+        savedTheme = localStorage.getItem('darkMode');
+    } catch (e) {
+        console.error('Failed to get dark mode from localStorage', e);
+    }
+
+    if (savedTheme) {
+        setTheme(savedTheme);
+    } else if (prefersDarkScheme.matches) {
+        setTheme('dark');
+    } else {
+        setTheme('light');
+    }
+
+    darkModeToggle.addEventListener('change', () => {
+        const theme = darkModeToggle.checked ? 'dark' : 'light';
+        setTheme(theme);
+    });
+
+    prefersDarkScheme.addEventListener('change', (e) => {
+        const theme = e.matches ? 'dark' : 'light';
+        let storedTheme = null;
+        try {
+            storedTheme = localStorage.getItem('darkMode');
+        } catch (e) {
+            console.error('Failed to get dark mode from localStorage', e);
+        }
+        if (!storedTheme) {
+            setTheme(theme);
+        }
+    });
+</script>
 </body></html>

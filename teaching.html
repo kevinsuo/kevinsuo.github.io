@@ -14,11 +14,20 @@
 p.margin {margin: 0cm 0.6cm 0cm 0.6cm}
 </style>
 
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+<link rel="stylesheet" href="toggle.css">
+<link rel="stylesheet" href="dark-mode.css">
 </head>
 
 
 
-<body style="background-color:#ffffff;">
+<body class="">
+  <div class="toggle-container">
+      <label class="toggle-switch">
+          <input type="checkbox" id="darkModeToggle">
+          <span class="slider"></span>
+      </label>
+  </div>
   <a name="TOP">
     </a><img height="220" hspace="15" src="./ksuo_homepage_files//tsuo3.jpg" align="left" border="1">
   
@@ -39,14 +48,14 @@ p.margin {margin: 0cm 0.6cm 0cm 0.6cm}
 
 
   <hr>
-      <a href="https://kevinsuo.github.io/index.html" style="color:#00ABA4">Myself</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-      <a href="https://kevinsuo.github.io/publication.html" style="color:#00ABA4">Publications</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
-      <a href="https://kevinsuo.github.io/teaching.html" style="color:#00ABA4">Teaching</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-      <a href="https://kevinsuo.github.io/code-lab.html" style="color:#00ABA4">CODE lab</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-      <a href="https://kevinsuo.github.io/opensource.html" style="color:#00ABA4">Research Grants & Impact</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-      <a href="https://kevinsuo.github.io/professional.html" style="color:#00ABA4">Professional Experiences</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-      <a href="https://kevinsuo.github.io/travel.html" style="color:#00ABA4">Travel</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-      <a href="https://kevinsuo.github.io/resources.html" style="color:#00ABA4">Resources</a> &nbsp;&nbsp;&nbsp;<br>
+      <a href="./index.html" style="color:#00ABA4">Myself</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      <a href="./publication.html" style="color:#00ABA4">Publications</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+      <a href="./teaching.html" style="color:#00ABA4">Teaching</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      <a href="./code-lab.html" style="color:#00ABA4">CODE lab</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      <a href="./opensource.html" style="color:#00ABA4">Research Grants & Impact</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      <a href="./professional.html" style="color:#00ABA4">Professional Experiences</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      <a href="./travel.html" style="color:#00ABA4">Travel</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      <a href="./resources.html" style="color:#00ABA4">Resources</a> &nbsp;&nbsp;&nbsp;<br>
   <hr>
 
 
@@ -163,5 +172,39 @@ p.margin {margin: 0cm 0.6cm 0cm 0.6cm}
 
 <div class="jvectormap-tip"></div>
 
+<script>
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
+    function setTheme(theme) {
+        body.classList.toggle('dark-mode', theme === 'dark');
+        darkModeToggle.checked = theme === 'dark';
+        localStorage.setItem('darkMode', theme);
+    }
+
+    // Check for saved dark mode preference
+    const savedTheme = localStorage.getItem('darkMode');
+
+    if (savedTheme) {
+        setTheme(savedTheme);
+    } else if (prefersDarkScheme.matches) {
+        setTheme('dark');
+    } else {
+        setTheme('light');
+    }
+
+    darkModeToggle.addEventListener('change', () => {
+        const theme = darkModeToggle.checked ? 'dark' : 'light';
+        setTheme(theme);
+    });
+
+    prefersDarkScheme.addEventListener('change', (e) => {
+        const theme = e.matches ? 'dark' : 'light';
+        // Only change the theme if there is no user preference stored
+        if (!localStorage.getItem('darkMode')) {
+            setTheme(theme);
+        }
+    });
+</script>
 </body></html>

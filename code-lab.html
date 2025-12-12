@@ -3,6 +3,8 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <title>Cloud Data and Edge Systems Lab</title>
+  <link rel="stylesheet" href="toggle.css">
+<link rel="stylesheet" href="dark-mode.css">
   </head>
 
 <style>
@@ -23,7 +25,13 @@
 </style>
 
 
-  <body style="background-color: white;" link="#9805ff">
+  <body link="#9805ff">
+  <div class="toggle-container">
+      <label class="toggle-switch">
+          <input type="checkbox" id="darkModeToggle">
+          <span class="slider"></span>
+      </label>
+  </div>
     <meta content="MSHTML 6.00.2900.2668" name="GENERATOR">
     <img src="./ksuo_homepage_files/logo.png" border="1" align="left" hspace="15"
       height="180"
@@ -341,5 +349,40 @@
     <hr>
 
     <p></p>
+<script>
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+    function setTheme(theme) {
+        body.classList.toggle('dark-mode', theme === 'dark');
+        darkModeToggle.checked = theme === 'dark';
+        localStorage.setItem('darkMode', theme);
+    }
+
+    // Check for saved dark mode preference
+    const savedTheme = localStorage.getItem('darkMode');
+
+    if (savedTheme) {
+        setTheme(savedTheme);
+    } else if (prefersDarkScheme.matches) {
+        setTheme('dark');
+    } else {
+        setTheme('light');
+    }
+
+    darkModeToggle.addEventListener('change', () => {
+        const theme = darkModeToggle.checked ? 'dark' : 'light';
+        setTheme(theme);
+    });
+
+    prefersDarkScheme.addEventListener('change', (e) => {
+        const theme = e.matches ? 'dark' : 'light';
+        // Only change the theme if there is no user preference stored
+        if (!localStorage.getItem('darkMode')) {
+            setTheme(theme);
+        }
+    });
+</script>
   </body>
 </html>

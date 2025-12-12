@@ -165,6 +165,8 @@
 				});
 		});
 	</script>
+	<link rel="stylesheet" href="toggle.css">
+	<link rel="stylesheet" href="dark-mode.css">
 	<style type="text/css">
 		.fancybox-custom .fancybox-skin {
 			box-shadow: 0 0 50px #222;
@@ -179,7 +181,13 @@
 
 
 
-<body style="background-color:#ffffff;">
+<body class="">
+  <div class="toggle-container">
+      <label class="toggle-switch">
+          <input type="checkbox" id="darkModeToggle">
+          <span class="slider"></span>
+      </label>
+  </div>
 <!-- 使用fancybox jquery插件 -->
 
 	<font color="#000000">
@@ -503,5 +511,40 @@
 	</font>
 	<br>
 	<br>
+<script>
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+    function setTheme(theme) {
+        body.classList.toggle('dark-mode', theme === 'dark');
+        darkModeToggle.checked = theme === 'dark';
+        localStorage.setItem('darkMode', theme);
+    }
+
+    // Check for saved dark mode preference
+    const savedTheme = localStorage.getItem('darkMode');
+
+    if (savedTheme) {
+        setTheme(savedTheme);
+    } else if (prefersDarkScheme.matches) {
+        setTheme('dark');
+    } else {
+        setTheme('light');
+    }
+
+    darkModeToggle.addEventListener('change', () => {
+        const theme = darkModeToggle.checked ? 'dark' : 'light';
+        setTheme(theme);
+    });
+
+    prefersDarkScheme.addEventListener('change', (e) => {
+        const theme = e.matches ? 'dark' : 'light';
+        // Only change the theme if there is no user preference stored
+        if (!localStorage.getItem('darkMode')) {
+            setTheme(theme);
+        }
+    });
+</script>
 </body>
 </html>
