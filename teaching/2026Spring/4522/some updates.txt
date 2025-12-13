@@ -1,12 +1,15 @@
-1, add hpc project and slides;
-
-2, add gpu project and slides; 
-
 3, add new thread project;
 
 4, add new mpi project;
 
 5, add new openmp project; 
+
+
+1, add hpc project and slides;
+
+2, add gpu project and slides; 
+
+
 
 6, add new client and server project;
 
