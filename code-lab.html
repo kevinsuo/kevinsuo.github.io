@@ -197,6 +197,39 @@
            <iframe width="560" height="315" src="https://www.youtube.com/embed/lYZ-k9sQv7o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </td>
   </tr> 
+
+
+
+    <tr>
+    <td style="width:20%">
+      Activation Sparsity Opportunities for Compressing General Large Language Models
+    </td>
+    <td style="width:40%">
+            Abstract—Deploying local Al models, such as Large Language Models (LIMs), to edge devices can substantially enhance devices' independent capabilities, alleviate the server's burden, and Lower the response time. Owing to these tremendous potentials, many big tech companies have been actively promoting edge LEM evolution and released several lightweight Small Language Models (SLMs) to bridge this gap. However, SLMs currently only work well on limited real-world applications. We still have huge motivations to deploy more powerful (larger-scale) Al models on edge devices and enhance their smartness level. Unlike the conventional approaches for Al model compression, we investigate from activation sparsity. The activation sparsity method is orthogonal and combinable with existing techniques to maximize compression rate while maintaining great accuracy. According to statistics of open-source LLMs, their Feed-Forward Network (FFN) components typically comprise a large proportion of parameters (around 3). This internal feature ensures that our FFN optimizations would have a better chance of achieving effective compression. Moreover, our findings are beneficial to general LLMs and are not restricted to ReLU-based models. This work systematically investigates the tradeoff between enforcing activation sparsity and perplexity (accuracy) on state- of-the-art LIMs. Our empirical analysis demonstrates that we can obtain around 50% of main memory and computing re- ductions for critical FFN components with negligible accuracy degradation. This extra 50% sparsity does not naturally exist in the current LLMs, which require tuning LLMs' activation outputs by injecting zero-enforcing thresholds. To obtain the benefits of activation sparsity, we provide a guideline for the system architect for LLM prediction and prefetching. Moreover, we further verified the predictability of activation patterns in recent LILMs. The success prediction allows the system to prefetch the necessary weights while omitting the inactive ones and their successors (compress models from the memory's perspective, therefore lowering cache/memory pollution and reducing LLM execution time on resource-constraint edge devices.
+    </td>
+    <td style="width:40%">
+           <img src="./code-lab-files/nobel.jpg"
+              alt="">
+    </td>
+  </tr> 
+
+
+
+    <tr>
+    <td style="width:20%">
+      Characterizing and Understanding the Performance of Small Language Models on Edge Devices
+    </td>
+    <td style="width:40%">
+            Abstract—In recent years, significant advancements in com- puting power, data richness, algorithmic development, and the growing demand for applications have catalyzed the rapid emergence and proliferation of large language models (LLMs) across various scenarios. Concurrently, factors such as computing resource limitations, cost considerations, real-time application requirements, task-specific customization, and privacy concerns have also driven the development and deployment of small language models (SLMs). Unlike extensively researched and widely deployed LLMs in the cloud, the performance of SLM workloads and their resource impact on edge environments remain poorly understood. More detailed studies will have to be carried out to understand the advantages, constraints, performances, and resource consumption in different settings of the edge. This paper addresses this gap by comprehensively analyzing representative SLMs on edge platforms. Initially, we provide a summary of contemporary edge hardware and popular SLMs. Subsequently, we quantitatively evaluate several widely used SLMs, including TinyLlama, Phi-3, Llama-3, etc., on popular edge platforms such as Raspberry Pi, Nvidia Jetson Orin, and Mac mini. Our findings reveal that the interaction between different hardware and SLMs can significantly impact edge AI workloads while introducing non-negligible overhead. Our exper- iments demonstrate that variations in performance and resource usage might constrain the workload capabilities of specific models and their feasibility on edge platforms. Therefore, users must judiciously match appropriate hardware and models based on the requirements and characteristics of the edge environment to avoid performance bottlenecks and optimize the utility of edge computing capabilities.
+    </td>
+    <td style="width:40%">
+           <img src="./code-lab-files/romyull.jpg"
+              alt="" style="width: 590px; height: 430px;">
+    </td>
+  </tr> 
+
+
+
 </table>
       
 
